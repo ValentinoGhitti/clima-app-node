@@ -4,7 +4,8 @@ require('colors');
 const { 
   inquirerMenu, 
   pausa,
-  leerInput
+  leerInput,
+  listarLugares
 } = require("./helpers/inquirer");
 
 const Busquedas = require("./models/busquedas");
@@ -19,19 +20,21 @@ const main = async() => {
     switch(opt) {
       case 1:
         //mostrar mensaje
-          const lugar = await leerInput('Ciudad: ');
-          await busquedas.ciudad(lugar);
-          //buscar los lugares
+        const busqueda = await leerInput('Ciudad: ');
+
+        //buscar los lugares
+        const lugares = await busquedas.ciudad(busqueda);
 
         //seleccionar el lugar
-
+        const id = await listarLugares(lugares);
+        const {nombre, lat, lng} = lugares.find(lugar => lugar.id === id)
         //climas
 
         //mostrar resultados 
         console.log('\nInformación de la cuidad\n'.green);
-        console.log('Ciudad:');
-        console.log('Lat:');
-        console.log('Lng:');
+        console.log('Ciudad:', nombre);
+        console.log('Lat:', lat);
+        console.log('Lng:', lng);
         console.log('Temperatura:');
         console.log('Mínima:');
         console.log('Máxima:');
