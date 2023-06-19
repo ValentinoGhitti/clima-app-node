@@ -37,14 +37,14 @@ const main = async() => {
 
         //mostrar resultados
         console.clear();
-        console.log('\nInformación de la cuidad\n'.green);
-        console.log('Ciudad:', nombre);
-        console.log('Lat:', lat);
-        console.log('Lng:', lng);
-        console.log(`Temperatura: ${temp + '°'.green}`);
-        console.log('Mínima:', min );
-        console.log('Máxima:', max);
-        console.log(`El clima está: ${desc}`);
+        console.log(`\nInformación de la cuidad\n`.underline.bold.green);
+        console.log(`${'Ciudad:'.bold}`, nombre.yellow.bold);
+        console.log(`${'Lat:'.bold} ${lat}ϕ`);
+        console.log(`${'Lng:'.bold} ${lng}λ`);
+        console.log(`${'Temperatura:'.bold} ${Math.round(temp) + '°'}`);
+        console.log(`${'Mínima:'.bold} ${Math.round(min) + '°'}`);
+        console.log(`${'Máxima:'.bold} ${Math.round(max) + '°'}`);
+        console.log(`${'El clima está con:'.bold} ${desc.yellow.bold}`);
       break;
       case 2: 
         busquedas.historialCapitalizado.forEach((lugar, i) => {
