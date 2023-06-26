@@ -10,5 +10,6 @@ Esta aplicación de terminal en Node.js te permite realizar llamadas HTTP hacia 
 - OpenWeather: Consulta datos climáticos de cualquier ubicación mediante la API de OpenWeather.
 - Aplicación de consola con historial: Visualiza y guarda un historial de búsquedas realizadas desde la aplicación.
 - Variables de entorno: Protege información sensible, como las claves de API, utilizando variables de entorno.
+- Inquirer: Utiliza el paquete Inquirer para crear una interfaz de línea de comandos interactiva y mejorar la experiencia del usuario al realizar las consultas.
 
 
